@@ -1,0 +1,155 @@
+======================================================================
+PERSONALIZED DINNER RECIPE GENERATOR
+Generated: March 23, 2026 at 17:30:26
+======================================================================
+
+USER PROFILE
+------------
+Allergies          : eggs, milk, nuts, soy
+Dietary Preferences: dairy-free
+
+======================================================================
+PROMPT SENT TO LLM
+======================================================================
+
+
+You are an expert chef and nutritionist. Your task is to generate ONE personalized
+dinner recipe that is completely safe and suitable for the user described below.
+
+USER PROFILE
+- Allergies: eggs, milk, nuts, soy
+- Dietary preferences: dairy-free
+
+STRICT RULES  (instruction-based)
+1. NEVER include any ingredient the user is allergic to, even in trace amounts.
+2. Every ingredient MUST align with the user's dietary preferences.
+3. If halal is listed: use only halal-certified meat, no pork or pork by-products,
+   no alcohol or alcohol-derived ingredients (wine, beer, vanilla extract, etc.).
+4. Provide exact quantities (e.g., "2 cups", "1 tsp") for every ingredient.
+5. Step-by-step instructions must be clear enough for a home cook with no
+   professional training.
+6. End with a short "Chef's Tip" that highlights one technique or substitution.
+
+WORKED EXAMPLE  (example-based)
+Below is a sample output for a DIFFERENT user (vegan, allergic to soy) so you
+understand the required format. Do NOT copy this recipe — generate a new one
+for the user profile above.
+
+--- EXAMPLE START ---
+Recipe Name: Moroccan Chickpea Stew
+
+Ingredients:
+• 2 cans (400 g each) chickpeas, drained and rinsed
+• 1 large onion, diced
+• 3 garlic cloves, minced
+• 1 can (400 g) crushed tomatoes
+• 1 cup vegetable broth (soy-free)
+• 1 tsp cumin
+• 1 tsp smoked paprika
+• ½ tsp cinnamon
+• Salt and pepper to taste
+• 2 tbsp olive oil
+• Fresh cilantro for garnish
+
+Instructions:
+Step 1 – Heat olive oil in a large pot over medium heat. Add the diced onion
+         and sauté for 5 minutes until translucent.
+Step 2 – Stir in garlic, cumin, paprika, and cinnamon; cook for 1 minute
+         until fragrant.
+Step 3 – Add chickpeas, crushed tomatoes, and broth. Stir to combine.
+Step 4 – Simmer on low heat for 20 minutes, stirring occasionally.
+Step 5 – Adjust seasoning with salt and pepper. Serve hot, garnished
+         with fresh cilantro.
+
+Chef's Tip: For extra depth, toast the whole spices in a dry pan for
+30 seconds before grinding them.
+--- EXAMPLE END ---
+
+CHAIN-OF-THOUGHT REASONING  (CoT)
+Before writing the recipe, think through these steps inside a <reasoning> block:
+
+<reasoning>
+Step A – Identify forbidden ingredients: list every ingredient family
+         that must be excluded due to the user's allergies.
+Step B – Identify required constraints: list the rules imposed by the
+         user's dietary preferences (e.g., no animal products for vegan,
+         no gluten-containing grains for gluten-free, halal rules).
+Step C – Brainstorm 3 candidate dinner ideas that satisfy Steps A and B.
+Step D – Choose the best candidate and explain why (nutrition balance,
+         accessibility of ingredients, ease of preparation).
+Step E – Draft the ingredients list, checking each item against Steps A–B.
+Step F – Draft the step-by-step instructions.
+</reasoning>
+
+After the </reasoning> block, output ONLY the final recipe in this exact format:
+
+Recipe Name: <name>
+
+Ingredients:
+• <quantity> <ingredient>
+...
+
+Instructions:
+Step 1 – <instruction>
+Step 2 – <instruction>
+...
+
+Chef's Tip: <tip>
+
+
+======================================================================
+LLM RESPONSE
+======================================================================
+
+<reasoning>
+Step A – Identify forbidden ingredients: The user is allergic to eggs, milk, nuts, and soy. This means that any ingredient derived from these sources must be excluded. For example, eggs, dairy products (including milk, cheese, yogurt), nuts (such as almonds, walnuts), and soy products (like tofu, soy sauce, edamame) are all forbidden.
+
+Step B – Identify required constraints: The user prefers a dairy-free diet. This constraint aligns with the allergy to milk but also means that any dairy-free alternative must be carefully selected to avoid other allergens like nuts or soy.
+
+Step C – Brainstorm 3 candidate dinner ideas that satisfy Steps A and B:
+1. Grilled Chicken with Roasted Vegetables: This option avoids all allergens and is dairy-free.
+2. Quinoa and Black Bean Bowl: This option is naturally free from common allergens and can be made dairy-free.
+3. Baked Cod with Sweet Potato and Green Beans: This seafood option is allergen-friendly and dairy-free.
+
+Step D – Choose the best candidate: The Grilled Chicken with Roasted Vegetables is a well-rounded option that provides a good balance of protein, complex carbohydrates, and fiber. It is also relatively easy to prepare and allows for a variety of vegetables to be included, making it a nutritious and accessible choice.
+
+Step E – Draft the ingredients list, checking each item against Steps A–B:
+- Chicken breast (ensuring it's from a dairy-free, nut-free, soy-free facility)
+- Variety of vegetables (such as bell peppers, zucchini, carrots, Brussels sprouts)
+- Olive oil
+- Salt and pepper
+- Optional: herbs like thyme, rosemary, or basil for flavor
+
+Step F – Draft the step-by-step instructions:
+1. Preheat the oven to 425°F (220°C).
+2. Prepare the vegetables by washing, peeling (if necessary), and cutting them into similar-sized pieces for even roasting.
+3. Season the chicken breast with salt, pepper, and chosen herbs (if using).
+4. Grill the chicken or bake it in the oven until cooked through.
+5. Toss the vegetables in olive oil, salt, and pepper, and spread them on a baking sheet to roast in the oven until tender and lightly browned.
+</reasoning>
+
+Recipe Name: Grilled Chicken with Roasted Vegetables
+
+Ingredients:
+• 4 boneless, skinless chicken breasts (6 oz each)
+• 2 large bell peppers, seeded and sliced
+• 2 medium zucchinis, sliced
+• 4 large carrots, peeled and chopped
+• 1 large red onion, chopped
+• 2 tsp dried thyme
+• 1 tsp salt
+• ½ tsp black pepper
+• 2 tbsp olive oil
+
+Instructions:
+Step 1 – Preheat the oven to 425°F (220°C).
+Step 2 – Prepare the vegetables by washing, peeling (if necessary), and cutting them into similar-sized pieces for even roasting.
+Step 3 – Season the chicken breasts with thyme, salt, and pepper.
+Step 4 – Grill the chicken breasts until cooked through, or bake them in the oven for about 20-25 minutes.
+Step 5 – Toss the vegetables in olive oil, salt, and pepper, and spread them on a baking sheet to roast in the oven for about 25-30 minutes, or until tender and lightly browned.
+
+Chef's Tip: For added flavor, marinate the chicken in a mixture of olive oil, lemon juice, and herbs for at least 30 minutes before grilling or baking.
+
+======================================================================
+END OF FILE
+======================================================================
